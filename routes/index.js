@@ -5,7 +5,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // res.send('Hey! It works!');
   res.render('hello', {
-    name: 'preston'
+    name: 'preston',
+    title: 'Test Title'
   });
 });
 

@@ -46,7 +46,7 @@ function loadPlaces(map, lat = 43.2, lng = -79.8) {
 }
 
 function makeMap(mapDiv) {
-  if (!makeMap) return;
+  if (!mapDiv) return;
 
   const map = new google.maps.Map(mapDiv, mapOptions);
   loadPlaces(map);

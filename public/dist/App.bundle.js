@@ -2775,7 +2775,7 @@ function loadPlaces(map) {
 }
 
 function makeMap(mapDiv) {
-  if (!makeMap) return;
+  if (!mapDiv) return;
 
   var map = new google.maps.Map(mapDiv, mapOptions);
   loadPlaces(map);

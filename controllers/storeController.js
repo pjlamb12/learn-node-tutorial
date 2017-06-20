@@ -43,7 +43,7 @@ exports.createStore = async (req, res) => {
   req.body.author = req.user._id;
   const store = await (new Store(req.body)).save();
   req.flash('success', `Successfully created ${store.name}. Care to leave a review?`);
-  res.redirect(`/stores/${store.slug}`);
+  res.redirect(`/store/${store.slug}`);
 };
 
 exports.updateStore = async (req, res) => {
@@ -52,8 +52,8 @@ exports.updateStore = async (req, res) => {
     new: true, // return the new store and not the old one
     runValidators: true
   }).exec();
-  req.flash('success', `Successfully updated ${store.name}. <a href="/stores/${store.slug}">View Store →</a>`);
-  res.redirect(`/stores/${store._id}/edit`);
+  req.flash('success', `Successfully updated ${store.name}. <a href="/store/${store.slug}">View Store →</a>`);
+  res.redirect(`/store/${store._id}/edit`);
 };
 
 exports.getStores = async (req, res) => {
